@@ -1,0 +1,32 @@
+%colors
+\newrgbcolor{outline-color}{0 0 0}
+
+%scaling
+\psset{xunit=0.74pt,yunit=0.74pt,runit=0.74pt}
+
+%draw it
+\begin{pspicture}(0,1060){
+  % header
+  \input{template/main/header.tex}
+
+  % column 1
+  \input{template/main/abilities.tex}
+  \input{template/main/proficiency.tex}
+  \input{template/main/savingthrows.tex}
+  \input{template/main/skills.tex}
+  \input{template/main/senses.tex}
+
+  % column 2
+  \input{template/main/combat.tex}
+
+  % column 3
+  \input{template/main/languages.tex}
+
+  % column 2 & 3
+  \input{template/main/attacks.tex}
+  \input{template/main/actions.tex}
+
+  % footer
+  \input{template/main/spellcasting.tex}
+}
+\end{pspicture}

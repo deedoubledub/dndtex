@@ -1,0 +1,11 @@
+\NeedsTeXFormat{LaTeX2e}[1994/06/01]
+\ProvidesPackage{dnd}[2023/01/20 DnD Character Sheet]
+
+\usepackage[letterpaper,left=-0.25cm,right=0cm,top=0cm,bottom=0cm]{geometry}
+\usepackage{pstricks}
+\usepackage[nomessages]{fp}
+\usepackage[addplus]{numprint}
+\usepackage{ifthen}
+
+\newcommand{\main}{\input{template/main.tex}}
+\newcommand{\roleplay}{\input{template/roleplay.tex}}
