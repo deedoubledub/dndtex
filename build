@@ -1,4 +1,4 @@
 #!/usr/bin/env bash
 
-latexmk -pdflua -pvc $1.tex
+latexmk -pdflua -pv $1.tex
 latexmk -c
