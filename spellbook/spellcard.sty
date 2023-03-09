@@ -1,0 +1,154 @@
+\NeedsTeXFormat{LaTeX2e}[1994/06/01]
+\ProvidesPackage{spellcard}[2023/02/15 DnD Spellbook Cards]
+
+\usepackage[letterpaper,margin=2mm]{geometry}
+\usepackage{tikz}
+
+% card size
+\pgfmathsetmacro{\cardwidth}{6}
+\pgfmathsetmacro{\cardheight}{9}
+\pgfmathsetmacro{\bannerwidth}{0.7}
+\pgfmathsetmacro{\borderpadding}{0.1}
+\pgfmathsetmacro{\textpadding}{0.1}
+\pgfmathsetmacro{\titley}{\cardheight-\borderpadding-\textpadding-0.5*\bannerwidth}
+
+% card shape, margins, and area
+\def\shapeCard{(0,0) rectangle (\cardwidth,\cardheight)}
+\def\shapeBanner{(\borderpadding,\borderpadding) rectangle (\borderpadding+\bannerwidth,\cardheight-1.5*\bannerwidth-\borderpadding)}
+\def\shapeTitle{(\borderpadding,\cardheight-\borderpadding) rectangle (\cardwidth-\borderpadding,\cardheight-1.5*\bannerwidth)}
+\def\shapeTextAreaHeight{0.7*\cardheight}
+\def\shapeTextArea{(2*\borderpadding+\bannerwidth,\shapeTextAreaHeight) rectangle (\cardwidth-\borderpadding,\borderpadding)}
+
+% style for tikz lib
+\tikzset{
+    % round corners for the cards
+    cardcorners/.style={
+        rounded corners=0.2cm
+    },
+    % round corners for card sub-elements
+    elementcorners/.style={
+        rounded corners=0.1cm
+    },
+    % style for the banner
+    banner/.style={
+        elementcorners,
+    },
+    colorbg/.style={
+        elementcorners,
+        opacity=0.5
+    },
+}
+
+% TikZ grid
+\newcommand{\carddebug}{
+    \draw [step=1,help lines] (0,0) grid (\cardwidth,\cardheight);
+}
+
+% card border
+\newcommand{\cardborder}{
+    \draw[lightgray,cardcorners] \shapeCard;
+}
+
+% card title
+\newcommand{\cardtitle}[1]{
+    \fill[elementcorners,#1,opacity=.85] \shapeTitle;
+}
+
+\newcommand{\spellIcon}[1]{
+    \node[above right] at (\borderpadding,\cardheight-1.5*\bannerwidth) {
+        \includegraphics[width=0.75cm, height=0.75cm]{img/#1.png}
+    };
+}
+
+\newcommand{\spellName}[1]{
+    \node[text width=3.75cm] at (0.5*\cardwidth,\titley) {
+        \begin{center}
+            \color{white}\normalsize #1
+        \end{center}
+    };
+}
+
+% card header
+\newcommand{\spellCastingTime}[1]{
+    \node[right, text width=(\cardwidth-3*\borderpadding-\bannerwidth)/2*1cm] at (\bannerwidth+\borderpadding,\cardheight-2*\borderpadding-1.5*\bannerwidth-\textpadding) {
+        \textsc{\scriptsize \faIcon{stopwatch}#1}
+    };
+}
+
+\newcommand{\spellRitual}{
+    \node[left, text width=(\cardwidth-3*\borderpadding-\bannerwidth)/2*1cm] at (\cardwidth-\borderpadding,\cardheight-2*\borderpadding-1.5*\bannerwidth-\textpadding) {
+        \textsc{\scriptsize \faIcon{book}Ritual}
+    };
+}
+
+\newcommand{\spellRange}[1]{
+    \node[right, text width=(\cardwidth-3*\borderpadding-\bannerwidth)/2*1cm] at (\bannerwidth+\borderpadding,\cardheight-2*\borderpadding-1.5*\bannerwidth-\textpadding-0.5*\bannerwidth) {
+        \scriptsize \faIcon{ruler-combined}#1
+    };
+}
+
+\newcommand{\spellArea}[2]{
+    \ifthenelse{\equal{#2}{cube}}{\newcommand{\areaIcon}{cube}}{}
+    \ifthenelse{\equal{#2}{line}}{\newcommand{\areaIcon}{long-arrow-alt-right}}{}
+    \ifthenelse{\equal{#2}{sphere}}{\newcommand{\areaIcon}{globe}}{}
+    \ifthenelse{\equal{#2}{square}}{\newcommand{\areaIcon}{square}}{}
+    \ifthenelse{\equal{#2}{cylinder}}{\newcommand{\areaIcon}{hockey-puck}}{}
+    \ifthenelse{\equal{#2}{cone}}{\newcommand{\areaIcon}{less-than}}{}
+    \node[left, text width=(\cardwidth-3*\borderpadding-\bannerwidth)/2*1cm] at (\cardwidth-\borderpadding,\cardheight-2*\borderpadding-1.5*\bannerwidth-\textpadding-0.5*\bannerwidth) {
+        \scriptsize \faIcon{\areaIcon}#1 \textsc{#2}
+    };
+}
+
+\newcommand{\spellDuration}[1]{
+    \node[right, text width=(\cardwidth-3*\borderpadding-\bannerwidth)/2*1cm] at (\bannerwidth+\borderpadding,\cardheight-2*\borderpadding-1.5*\bannerwidth-\textpadding-\bannerwidth) {
+        \textsc{\scriptsize \faIcon{hourglass-end}#1}
+    };
+}
+
+\newcommand{\spellConcentration}{
+    \node[left, text width=(\cardwidth-3*\borderpadding-\bannerwidth)/2*1cm] at (\cardwidth-\borderpadding,\cardheight-2*\borderpadding-1.5*\bannerwidth-\textpadding-\bannerwidth) {
+        \textsc{\scriptsize \faIcon{copyright}Concentration}
+    };
+}
+
+\newcommand{\spellMaterialComponents}[1]{
+    \node[right, text width=(\cardwidth-3*\borderpadding-\bannerwidth)*1cm] at (\bannerwidth+1.5*\borderpadding,\cardheight-4*\borderpadding-3*\bannerwidth) {
+        \includegraphics[width=0.3cm, height=0.3cm]{img/pouch.png}
+        \textsc{\tiny #1}
+    };
+}
+
+% card banner
+\newcommand{\cardbanner}[1]{
+    \fill[banner] \shapeBanner;
+    \fill[colorbg,#1] \shapeBanner;
+    \node[above, text width=0cm] at (2*\borderpadding,\borderpadding){
+        \color{white}\faIcon{d-and-d}
+    };
+}
+
+\newcommand{\spellSchoolLevel}[1]{
+    \node[rotate=90,above left=0.9mm,font=\normalsize] at (\borderpadding+\bannerwidth,\cardheight-\borderpadding-\borderpadding-1){
+        \color{white}\textsc{#1}
+    };
+}
+
+\newcommand{\spellComponents}[3]{
+    %\node[above left=1mm,font=\scriptsize] at (\borderpadding+\bannerwidth,0){
+    \node[above, text width=0cm] at (0.5*\bannerwidth,\borderpadding+0.75cm){
+        \color{white}\texttt{#1\newline#2\newline#3}
+    };
+}
+
+% card text
+\newcommand{\cardtextarea}[1]{
+    \fill[elementcorners,#1,opacity=.85] \shapeTextArea;
+}
+
+\newcommand{\spellText}[1]{
+    \node[below right, text width=(\cardwidth-3*\borderpadding-\bannerwidth-2.5*\textpadding)*1cm] at (2*\borderpadding+\bannerwidth,\shapeTextAreaHeight+4*\borderpadding) {
+        \begin{flushleft}
+            \footnotesize #1
+        \end{flushleft}
+    };
+}

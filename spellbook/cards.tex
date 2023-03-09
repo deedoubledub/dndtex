@@ -1,0 +1,272 @@
+\documentclass[letterpaper]{article}
+
+\usepackage{spellcard}
+\usepackage{ifthen}
+\usepackage[fixed]{fontawesome5}
+
+% colors
+\definecolor{titlebg}{RGB}{30,30,30}
+\definecolor{bannerbg}{RGB}{255,000,50}
+\definecolor{textbg}{RGB}{200,200,200}
+
+% card layout template
+\newcommand{\card}{
+    \cardtitle{titlebg}
+    \cardbanner{bannerbg}
+    \cardtextarea{textbg}
+    \cardborder
+    %\carddebug
+}
+
+% spell cards
+\begin{document}
+\begin{center}
+    \pagestyle{empty}
+
+    %% spell template
+    %\begin{tikzpicture}
+    %    \card
+    %    \spellName{name}
+    %    \spellIcon{school}
+    %    \spellSchoolLevel{banner text}
+    %    \spellComponents{V}{S}{M}
+    %    \spellMaterialComponents{optional material components}
+    %    \spellCastingTime{1 Action}
+    %    \spellRitual %optional
+    %    \spellRange{60 ft}
+    %    \spellArea{15 ft}{cube} %optional
+    %    \spellDuration{Instantaneous}
+    %    \spellConcentration %optional
+    %    \spellText{
+    %        spell text, may contain TeX formatiing\\
+    %        \vrule width \textwidth height 0.5pt\\[3pt] %optional separator
+    %        additional text such as up-level casting information
+    %    }
+    %\end{tikzpicture}
+
+    %% cantrips
+    % Acid Splash
+    \begin{tikzpicture}
+        \card
+        \spellName{Acid Splash}
+        \spellIcon{conjuration}
+        \spellSchoolLevel{Conjuration Cantrip}
+        \spellComponents{V}{S}{}
+        \spellCastingTime{1 Action}
+        \spellRange{60 ft}
+        \spellDuration{Instantaneous}
+        \spellText{
+            You hurl a bubble of acid. Choose one or two creatures you can see
+            within range. If you choose two, they must be within 5 feet of each
+            other. A target must succeed on a \textbf{Dexterity saving throw}
+            or take \textbf{1d6 acid damage}.\\
+            \vrule width \textwidth height 0.5pt\\[3pt]
+            This spell's damage increases by 1d6 when you reach 5th level (2d6),
+            11th level (3d6), and 17th level (4d6).
+        }
+    \end{tikzpicture}
+    \hspace{2mm}
+    % Light
+    \begin{tikzpicture}
+        \card
+        \spellName{Light}
+        \spellIcon{evocation}
+        \spellSchoolLevel{Evocation Cantrip}
+        \spellComponents{V}{}{M}
+        \spellMaterialComponents{a firefly or phosphorescent moss}
+        \spellCastingTime{1 Action}
+        \spellRange{Touch}
+        \spellArea{20 ft}{sphere}
+        \spellDuration{1 Hour}
+        \spellText{
+            You touch one object that is no larger than 10 feet in any dimension.
+            Until the spell ends, the object sheds \textbf{bright light in a 20-foot
+            radius and dim light for an additional 20 feet}. The light can be
+            colored as you like. Completely covering the object with something
+            opaque blocks the light. The spell ends if you cast it again or
+            dismiss it as an action.\\[6pt]
+            If you target an object held or worn by a hostile creature, that
+            creature must succeed on a Dexterity saving throw to avoid the spell.
+        }
+    \end{tikzpicture}
+    \hspace{2mm}
+    % Mage Hand
+    \begin{tikzpicture}
+        \card
+        \spellName{Mage Hand}
+        \spellIcon{conjuration}
+        \spellSchoolLevel{Conjuration Cantrip}
+        \spellComponents{V}{S}{}
+        \spellCastingTime{1 Action}
+        \spellRange{30 ft}
+        \spellDuration{1 Minute}
+        \spellText{
+            A spectral, floating hand appears at a point you choose within
+            range. The hand lasts for the duration or until you dismiss it as an
+            action. The hand vanishes if it is ever more than 30 feet away from
+            you or if you cast this spell again.\\
+            You can use your action to control the hand. You can use the hand to
+            manipulate an object, open an unlocked door or container, stow or
+            retrieve an item from an open container, or pour the contents out of
+            a vial. You can move the hand up to 30 feet each time you use it.\\
+            The hand can't attack, activate magic items, or carry more than 10
+            pounds.
+        }
+    \end{tikzpicture}
+    \hspace{2mm}
+    % Ray of Frost
+    \begin{tikzpicture}
+        \card
+        \spellName{Ray of Frost}
+        \spellIcon{evocation}
+        \spellSchoolLevel{Evocation Cantrip}
+        \spellComponents{V}{S}{}
+        \spellCastingTime{1 Action}
+        \spellRange{60 ft}
+        \spellDuration{Instantaneous}
+        \spellText{
+            A frigid beam of blue-white light streaks toward a creature within
+            range. Make a \textbf{ranged spell attack} against the target. On a hit, it
+            takes \textbf{1d8 cold damage, and its speed is reduced by 10 feet until the
+            start of your next turn}.\\
+            \vrule width \textwidth height 0.5pt\\[3pt] %optional separator
+            The spell's damage increases by 1d8 when you reach 5th level (2d8),
+            11th level (3d8), and 17th level (4d8).
+        }
+    \end{tikzpicture}
+    \hspace{2mm}
+    %% 1st Level Spells
+    % Burning Hands
+    \begin{tikzpicture}
+        \card
+        \spellName{Burning Hands}
+        \spellIcon{evocation}
+        \spellSchoolLevel{1st Level Evocation}
+        \spellComponents{V}{S}{}
+        \spellCastingTime{1 Action}
+        \spellRange{Self}
+        \spellArea{15 ft}{cone}
+        \spellDuration{Instantaneous}
+        \spellText{
+            As you hold your hands with thumbs touching and fingers spread, a
+            thin sheet of flames shoots forth from your outstretched fingertips.
+            Each creature in a \textbf{15-foot cone} must make a \textbf{Dexterity saving throw}.
+            A creature takes \textbf{3d6 fire damage} on a failed save, \textbf{or half} as much
+            damage on a successful one.\\
+            The fire ignites any flammable objects in the area that aren't being
+            worn or carried.\\
+            \vrule width \textwidth height 0.5pt\\[3pt] %optional separator
+            When you cast this spell using a spell slot of 2nd level or higher,
+            the damage increases by 1d6 for each slot level above 1st.
+        }
+    \end{tikzpicture}
+    \hspace{2mm}
+    % Comprehend Languages
+    \begin{tikzpicture}
+        \card
+        \spellName{Comprehend Languages}
+        \spellIcon{divination}
+        \spellSchoolLevel{1st Level Divination}
+        \spellComponents{V}{S}{M}
+        \spellMaterialComponents{a pinch of soot and salt}
+        \spellCastingTime{1 Action}
+        \spellRitual
+        \spellRange{Self}
+        \spellDuration{1 Hour}
+        \spellText{
+            For the duration, you understand the literal meaning of any spoken
+            language that you hear. You also understand any written language
+            that you see, but you must be touching the surface on which the
+            words are written. It takes about 1 minute to read one page of text.\\[6pt]
+            This spell doesn't decode secret messages in a text or a glyph, such
+            as an arcane sigil, that isn't part of a written language.
+        }
+    \end{tikzpicture}
+    \hspace{2mm}
+    % Detect Magic
+    \begin{tikzpicture}
+        \card
+        \spellName{Detect Magic}
+        \spellIcon{divination}
+        \spellSchoolLevel{1st Level Divintation}
+        \spellComponents{V}{S}{}
+        \spellCastingTime{1 Action}
+        \spellRitual
+        \spellRange{Self}
+        \spellArea{30 ft}{sphere}
+        \spellDuration{10 Minutes}
+        \spellConcentration
+        \spellText{
+            For the duration, you sense the presence of magic within \textbf{30 feet} of
+            you. If you sense magic in this way, you can use your action to see
+            a faint aura around any visible creature or object in the area that
+            bears magic, and you learn its school of magic, if any.\\[6pt]
+            The spell can penetrate most barriers, but it is blocked by 1 foot
+            of stone, 1 inch of common metal, a thin sheet of lead, or 3 feet of
+            wood or dirt.
+        }
+    \end{tikzpicture}
+    \hspace{2mm}
+    % Find Familiar
+    \begin{tikzpicture}
+        \card
+        \spellName{Find Familiar}
+        \spellIcon{conjuration}
+        \spellSchoolLevel{1st Level Conjuration}
+        \spellComponents{V}{S}{M}
+        \spellMaterialComponents{10gp char./inc./herb burned in brass brazier}
+        \spellCastingTime{1 Hour}
+        \spellRitual
+        \spellRange{10 ft}
+        \spellDuration{Instantaneous}
+        \spellText{
+            You gain the service of a familiar, a spirit that takes an animal form you choose.\\[6pt]
+            Your familiar acts independently of you, but it always obeys your commands.\\[6pt]
+            While your familiar is within 100 feet of you, you can communicate with it telepathically.\\[6pt]
+            Finally, when you cast a spell with a range of touch, your familiar can deliver the spell as if it had cast the spell.\\[6pt]
+            Full details: \textit{Player's Handbook}, pg. 240
+        }
+    \end{tikzpicture}
+    \hspace{2mm}
+    % Mage Armor
+    \begin{tikzpicture}
+        \card
+        \spellName{Mage Armor}
+        \spellIcon{abjuration}
+        \spellSchoolLevel{1st Level Abjuration}
+        \spellComponents{V}{S}{M}
+        \spellMaterialComponents{a piece of cured leather}
+        \spellCastingTime{1 Action}
+        \spellRange{Touch}
+        \spellDuration{8 Hours}
+        \spellText{
+            You touch a willing creature who isn't wearing armor, and a
+            protective magical force surrounds it until the spell ends. The
+            target's \textbf{base AC becomes 13 \texttt{+} its Dexterity modifier}. The spell ends
+            if the target dons armor or if you dismiss the spell as an action.
+        }
+    \end{tikzpicture}
+    \hspace{2mm}
+    % Magic Missile
+    \begin{tikzpicture}
+        \card
+        \spellName{Magic Missile}
+        \spellIcon{evocation}
+        \spellSchoolLevel{1st Level Evocation}
+        \spellComponents{V}{S}{}
+        \spellCastingTime{1 Action}
+        \spellRange{120 ft}
+        \spellDuration{Instantaneous}
+        \spellText{
+            You create \textbf{three glowing darts} of magical force. Each dart hits a
+            creature of your choice that you can see within range. A dart deals
+            \textbf{1d4 \texttt{+} 1 force damage} to its target. The darts all strike
+            simultaneously, and you can direct them to hit one creature or
+            several.\\
+            \vrule width \textwidth height 0.5pt\\[3pt] %optional separator
+            When you cast this spell using a spell slot of 2nd level or higher,
+            the spell creates one more dart for each slot level above 1st.
+        }
+    \end{tikzpicture}
+\end{center}
+\end{document}
