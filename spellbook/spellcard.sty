@@ -61,9 +61,9 @@
 }
 
 \newcommand{\spellName}[1]{
-    \node[text width=3.75cm] at (0.5*\cardwidth,\titley) {
+    \node[text width=4.50cm] at (0.5*\cardwidth,\titley) {
         \begin{center}
-            \color{white}\normalsize #1
+            \color{white}\normalsize \textbf{#1}
         \end{center}
     };
 }
@@ -128,15 +128,14 @@
 }
 
 \newcommand{\spellSchoolLevel}[1]{
-    \node[rotate=90,above left=0.9mm,font=\normalsize] at (\borderpadding+\bannerwidth,\cardheight-\borderpadding-\borderpadding-1){
-        \color{white}\textsc{#1}
+    \node[rotate=90,above left=0.8mm,font=\normalsize] at (\borderpadding+\bannerwidth,\cardheight-\borderpadding-\borderpadding-1){
+        \color{white}\textbf{\textsc{#1}}
     };
 }
 
 \newcommand{\spellComponents}[3]{
-    %\node[above left=1mm,font=\scriptsize] at (\borderpadding+\bannerwidth,0){
     \node[above, text width=0cm] at (0.5*\bannerwidth,\borderpadding+0.75cm){
-        \color{white}\texttt{#1\newline#2\newline#3}
+        \color{white}\textbf{\texttt{#1\newline#2\newline#3}}
     };
 }
 
