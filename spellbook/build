@@ -1,4 +1,4 @@
 #!/usr/bin/env bash
 
-latexmk -pdflua -pv cards.tex
+latexmk -pdflua -pvc cards.tex
 latexmk -c
