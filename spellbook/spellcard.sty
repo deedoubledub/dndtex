@@ -4,9 +4,9 @@
 \usepackage[letterpaper,margin=2mm]{geometry}
 \usepackage{tikz}
 
-% card size
-\pgfmathsetmacro{\cardwidth}{6}
-\pgfmathsetmacro{\cardheight}{9}
+% card size - 3.5" x 2.5" - 8.89cm x 6.35cm
+\pgfmathsetmacro{\cardwidth}{6.35}
+\pgfmathsetmacro{\cardheight}{8.89}
 \pgfmathsetmacro{\bannerwidth}{0.7}
 \pgfmathsetmacro{\borderpadding}{0.1}
 \pgfmathsetmacro{\textpadding}{0.1}
@@ -129,7 +129,7 @@
 
 \newcommand{\spellSchoolLevel}[1]{
     \node[rotate=90,above left=0.8mm,font=\normalsize] at (\borderpadding+\bannerwidth,\cardheight-\borderpadding-\borderpadding-1){
-        \color{white}\textbf{\textsc{#1}}
+        \color{white}\large\textsc{#1}
     };
 }
 
