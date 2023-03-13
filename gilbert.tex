@@ -7,7 +7,7 @@
 %header
 \newcommand{\CharacterName}{Gilbert Windham}
 \newcommand{\Class}{Wizard}
-\newcommand{\Level}{1}
+\newcommand{\Level}{2}
 \newcommand{\Background}{Archaeologist}
 \newcommand{\PlayerName}{deedoubledub}
 \newcommand{\Race}{Variant Human}
@@ -28,21 +28,22 @@
 \newcommand{\ProfArcana}{true}
 \newcommand{\ProfHistory}{true}
 \newcommand{\ProfInvestigation}{true}
+\newcommand{\ProfPerformance}{true}
 \newcommand{\ProfReligion}{true}
 \newcommand{\ProfSurvival}{true}
 
-\newcommand{\ProfArmor}{None}
-\newcommand{\ProfWeapons}{Crossbow (Light), Dagger, Dart,\\ Quarterstaff, Sling}
+\newcommand{\ProfArmor}{Light Armor}
+\newcommand{\ProfWeapons}{Crossbow (Light), Dagger, Dart,\\ Quarterstaff, Sling, Rapier}
 \newcommand{\ProfTools}{Cartographer's Tools}
 \newcommand{\ProfLanguages}{Common, Draconic, Elvish}
 
 %combat
 \newcommand{\BaseArmor}{10}
-\newcommand{\Armor}{0}
+\newcommand{\Armor}{2}
 \newcommand{\Speed}{30ft.}
 
 %hit points
-\FPeval{\BaseHP}{6} %add rolls at each level
+\FPeval{\BaseHP}{6+4} %add rolls at each level
 
 %hit dice
 \newcommand{\HitDice}{d6}
@@ -50,25 +51,28 @@
 %actions
 \newcommand{\Actions}{
   \textbf{Bonus Actions:\\} Telekinetic - Shove\\
-  As a bonus action, you can try to telekinetically shove one creature you can
-  see within 30 ft. The target must succeed on a \textbf{STR save} or be moved 5
-  ft. toward you or away from you. A creature can willingly fail this save.\\
+  You can telekinetically shove a creature you can see within \textbf{30 ft.}
+  The target must succeed on a \textbf{STR save} or be \textbf{moved 5 ft.
+  toward you or away from you}. A creature can willingly fail.\\
+
+  Bladesong \textbullet\ \ProficiencyBonus/Long Rest \textbullet\ Lasts \textbf{1 minute}\\
+  \textbf{\texttt{+}\INTmod\ AC}, \textbf{\texttt{+}10 ft.} walking speed, \textbf{advantage on
+  Acrobatics checks}, \textbf{\texttt{+}\INTmod} to \textbf{CON saves to maintain concentration}\\
 
   \textbf{Special Actions:\\} Arcane Recovery \textbullet\ 1/Long Rest\\
   Recover spell slots of a combined level up to half your wizard level (rounded up).
   The slots must be 5th level or lower.\\
 
-  \textbf{Prepared Spells:\\}
-  \textbf{Cantrips:} Acid Splash, Light, Mage Hand, Ray of Frost\\
-  \textbf{1st Level:} Burning Hands, Comprehend Languages, Detect Magic, Mage Armor, Magic Missile\\
+  \textbf{Prepared Spells:} \FPeval{\PreparedSpell}{trunc(\Level+\INTmod:0)}\PreparedSpell
 }
 
 %attacks
 \newcommand{\Attacks}{
-  \attack{Dagger}{5ft.}{20(60)}{+4}{1d4+2}{piercing}{Finesse, Light, Thrown}\\
-  \attack{Whip}{10ft.}{}{+2}{1d4+2}{slashing}{Finesse, Reach}\\\\
-  \attack{Acid Splash}{}{60}{14 DEX}{1d6}{acid}{V,S}\\
-  \attack{Ray of Frost}{}{60}{+6}{1d8}{cold}{V,S}
+  \attack{Rapier}{5ft.}{}{\texttt{+}\FPeval{\RapierHit}{trunc(\ProficiencyBonus+\DEXmod:0)}\RapierHit}{1d8\texttt{+}\DEXmod}{piercing}{Finesse}\\
+  \attack{Dagger}{5ft.}{20(60)}{\texttt{+}\FPeval{\DaggerHit}{trunc(\ProficiencyBonus+\DEXmod:0)}\DaggerHit}{1d4\texttt{+}\DEXmod}{piercing}{Finesse, Light, Thrown}\\
+  \attack{Whip}{10ft.}{}{\texttt{+}\DEXmod}{1d4\texttt{+}\DEXmod}{slashing}{Finesse, Reach}\\\\
+  \attack{Acid Splash}{}{60}{\FPeval{\AcidSplashSave}{trunc(8+\ProficiencyBonus+\INTmod:0)}\AcidSplashSave\ DEX}{1d6}{acid}{V,S}\\
+  \attack{Ray of Frost}{}{60}{\texttt{+}\FPeval{\RayFrostHit}{trunc(\ProficiencyBonus+\INTmod:0)}\RayFrostHit}{1d8}{cold}{V,S}
 }
 
 %spellcasting
@@ -85,23 +89,21 @@
 %equipment
 \newcommand{\Equipment}{
   %name qty wt cost notes
+  \dnditem{Rapier}{1}{2}{25}{\tiny{martial, finesse}}\\
   \dnditem{Dagger}{1}{1}{2}{\tiny{simple, finesse, light, thrown, range (20/60)}}\\
   \dnditem{Whip}{1}{3}{2}{martial, finesse, reach}\\
   \dnditem{Spellbook}{1}{3}{50}{utility}\\
+  \dnditem{Studded Leather}{1}{13}{45}{light armor, AC 12}\\
   \dnditem{Traveler's Clothes}{1}{4}{2}{social, outerwear}\\
+  \dnditem{The Burnt Book}{1}{-}{-}{journal, spellbook}\\
   \\
   \dnditem{\textbf{Backpack}}{1}{5}{2}{capacity: 1ft$^3$/30\tiny{lb.}}\\
-  \dnditem{Book}{1}{5}{25}{social, utility}\\
   \dnditem{Ink Pen}{1}{-}{0.02}{communication, social, utility}\\
   \dnditem{Ink \scriptsize{(1 oz. bottle)}}{1}{-}{10}{\tiny{communication, social, utility, consumable}}\\
-  \dnditem{Parchment}{10}{-}{1}{\tiny{communication, social, utility, consumable}}\\
+  \dnditem{Parchment}{310}{-}{31}{\tiny{communication, social, utility, consumable}}\\
   \dnditem{Little Bag of Sand}{1}{-}{-}{utility}\\
   \dnditem{Small Knife}{1}{-}{-}{utility}\\
   \dnditem{Map Case \& Map}{1}{-}{-}{Is this a crypt in Udarth?}\\
-  \dnditem{Two-Person Tent}{1}{20}{2}{social, utility, exploration}\\
-  \dnditem{Bullseye Lantern}{1}{2}{10}{\tiny{cone - 60ft bright, 60ft dim; 6hr/pint of oil}}\\
-  \dnditem{Miner's Pick}{1}{10}{2}{utility}\\
-  \dnditem{Shovel}{1}{5}{2}{utility}\\
   \\
   \dnditem{\textbf{Component Pouch}}{1}{2}{25}{spellcasting focus}\\
 }
@@ -109,7 +111,7 @@
 %money
 \newcommand{\CP}{0}
 \newcommand{\SP}{0}
-\newcommand{\GP}{30}
+\newcommand{\GP}{1}
 \newcommand{\EP}{0}
 \newcommand{\PP}{0}
 
@@ -141,7 +143,7 @@
   \textbf{Spell Slots:\\}
   \begin{tabular}{ c c c c c c }
     \textbf{1st} & \textbf{2nd} & \textbf{3rd} & \textbf{4th} & \textbf{5th} & \textbf{6th} \\
-    2 & - & - & - & - & -
+    3 & - & - & - & - & -
   \end{tabular}\\\\
   \begin{tabular}{ c c c }
     \textbf{7th} & \textbf{8th} & \textbf{9th} \\
