@@ -1,0 +1,164 @@
+\documentclass[letterpaper]{article}
+
+\usepackage{spellcard}
+\usepackage{ifthen}
+\usepackage[fixed]{fontawesome5}
+
+% colors
+\definecolor{titlebg}{RGB}{30,30,30}
+\definecolor{bannerbg}{RGB}{255,000,50}
+\definecolor{textbg}{RGB}{200,200,200}
+
+% card layout template
+\newcommand{\card}{
+    \cardtitle{titlebg}
+    \cardbanner{bannerbg}
+    \cardtextarea{textbg}
+    \cardborder
+    %\carddebug
+}
+
+% familiar card layout template
+\newcommand{\familiar}{
+    \cardtitle{titlebg}
+    \cardbanner{bannerbg}
+    \cardborder
+    %\carddebug
+}
+
+% spell cards
+\begin{document}
+\begin{center}
+    \pagestyle{empty}
+
+    %% spell template
+    %\begin{tikzpicture}
+    %    \card
+    %    \spellName{name}
+    %    \spellIcon{school}
+    %    \spellSchoolLevel{banner text}
+    %    \spellComponents{V}{S}{M}
+    %    \spellMaterialComponents{optional material components}
+    %    \spellCastingTime{1 Action}
+    %    \spellRitual %optional
+    %    \spellRange{60 ft}
+    %    \spellArea{15 ft}{cube} %optional
+    %    \spellDuration{Instantaneous}
+    %    \spellConcentration %optional
+    %    \spellText{
+    %        spell text, may contain TeX formatting\\
+    %        \vrule width \textwidth height 0.5pt\\[3pt] %optional separator
+    %        additional text such as up-level casting information
+    %    }
+    %\end{tikzpicture}
+
+    %absorb elements
+    \begin{tikzpicture}
+        \card
+        \spellName{Absorb Elements}
+        \spellIcon{Abjuration}
+        \spellSchoolLevel{1st Level Abjuration}
+        \spellComponents{}{S}{}
+        \spellCastingTime{1 Reaction}
+        \spellRange{Self}
+        \spellDuration{1 Round}
+        \spellText{
+            \scriptsize{\textit{Reaction: when you take acid, cold, fire,
+            lightning, or thunder damage}}\\
+            \vspace{3pt}
+            The spell captures some of the incoming energy, lessening its effect
+            on you and storing it for your next melee attack. You have
+            \textbf{resistance to the triggering damage type} until the start of
+            your next turn. Also, the first time you hit with a melee attack on
+            your next turn, the target takes an \textbf{extra 1d6 damage} of the
+            triggering type, and the spell ends.\\
+            \vrule width \textwidth height 0.5pt\\[3pt]
+            When you cast this spell using a spell slot of 2nd level or higher,
+            the extra damage increases by \textbf{1d6} for each slot level above 1st.
+        }
+    \end{tikzpicture}
+    \hspace{2mm}
+    %alarm
+    \begin{tikzpicture}
+        \card
+        \spellName{Alarm}
+        \spellIcon{Abjuration}
+        \spellSchoolLevel{1st Level Abjuration}
+        \spellComponents{V}{S}{M}
+        \spellMaterialComponents{a tiny bell and a piece of fine silver wire}
+        \spellCastingTime{1 Minute}
+        \spellRitual %optional
+        \spellRange{30 ft.}
+        \spellDuration{8 Hours}
+        \spellText{
+            \scriptsize{You set an alarm against unwanted intrusion. Choose a door, a
+            window, or an area within range that is no larger than a
+            \textbf{20-foot cube}. Until the spell ends, an alarm alerts you
+            whenever a Tiny or larger creature touches or enters the warded area.
+            When you cast the spell, you can designate creatures that won't set
+            off the alarm. You also choose whether the alarm is mental or audible.\\
+            \vspace{2mm}
+            A mental alarm alerts you with a ping in your mind if you are within
+            \textbf{1 mile} of the warded area. This ping awakens you if you are sleeping.\\
+            \vspace{2mm}
+            An audible alarm produces the sound of a hand bell for 10 seconds within 60 feet.}
+        }
+    \end{tikzpicture}
+    \hspace{2mm}
+    %absorb elements
+    \begin{tikzpicture}
+        \card
+        \spellName{Shield}
+        \spellIcon{Abjuration}
+        \spellSchoolLevel{1st Level Abjuration}
+        \spellComponents{V}{S}{}
+        \spellCastingTime{1 Reaction}
+        \spellRange{Self}
+        \spellDuration{1 Round}
+        \spellText{
+            \scriptsize{\textit{Reaction: when you are hit by an attack or
+            targeted by the magic missile spell}}\\
+            \vspace{3pt}
+            An invisible barrier of magical force appears and protects you.
+            Until the start of your next turn, you have a
+            \textbf{\texttt{+}5 bonus to AC}, including against the triggering
+            attack, and you take no damage from magic missile.
+        }
+    \end{tikzpicture}
+    %familiar
+    \begin{tikzpicture}
+        \familiar
+        \spellName{Poot}
+        \spellSchoolLevel{Owl Familiar}
+        \node[right, text width=(1cm)] at (1.65,6) {
+            \includegraphics[width=3.5cm, height=3.5cm]{img/owl.jpg}
+        };
+        \spellText{
+            \vspace{20mm}
+            \begin{center}
+                \tiny{Tiny Fey, Unaligned}\\
+                \vspace{2mm}
+                \scriptsize
+                \faIcon{shield-alt} 11 \hspace{2pt} \faIcon{heart}1 \hspace{2pt} \faIcon{shoe-prints} 5 ft. \faIcon{paper-plane} 60 ft.\\
+                \vrule width \textwidth height 0.5pt\\[3pt]
+                \begin{tabular}{ c c c }
+                    \textbf{STR} & \textbf{DEX} & \textbf{CON}\\
+                    3 (\texttt{-}4) & 13 (\texttt{+}1) & 8 (\texttt{-}1)\\
+                    \\
+                    \textbf{INT} & \textbf{WIS} & \textbf{CHA} \\
+                    2 (\texttt{-}4) & 12 (\texttt{+}1) & 7 (\texttt{-}2)
+                \end{tabular}\\
+            \vrule width \textwidth height 0.5pt\\[3pt]
+            \tiny
+            \textbf{Skills} Perception \texttt{+}3, Stealth \texttt{+}3\\
+            \vspace{1mm}
+            \faIcon{eye} Darkvision 120 ft., Passive Perception 13\\
+            \vspace{1mm}
+            \textbf{Flyby.} Does not provoke opportunity attacks\\
+            \vspace{1mm}
+            \textbf{Keen Hearing and Sight.} Advantage on Perception checks that use hearing/sight
+            \end{center}
+        }
+    \end{tikzpicture}
+\end{center}
+\end{document}
