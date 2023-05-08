@@ -251,25 +251,13 @@
 \rput[cc](695.0886031,927.01546172){\scriptsize \textsf{BONUS}}
 
 %character data
-\ifthenelse{\isundefined{\SpellAbility}}{
-  \newcommand{\SpellAbility}{--}
-  \newcommand{\SpellSaveDC}{--}
-  \newcommand{\SpellAttackBonus}{--}
+\rput[cc](421.60812279,965.002775875){\LARGE \SpellAbility}
+\rput[cc](555.88958610,965.002775875){\LARGE \SpellSaveDC}
 
-  \rput[cc](421.60812279,965.002775875){\LARGE \SpellAbility}
-  \rput[cc](555.88958610,965.002775875){\LARGE \SpellSaveDC}
+\ifthenelse{\equal{\SpellAttackBonus}{--}}{
   \rput[cc](694.28771598,965.002775875){\LARGE \SpellAttackBonus}
 }
 {
-  \ifthenelse{\equal{\SpellAbility}{INT}}{\newcommand{\SpellMod}{\INTmod}}{}
-  \ifthenelse{\equal{\SpellAbility}{WIS}}{\newcommand{\SpellMod}{\WISmod}}{}
-  \ifthenelse{\equal{\SpellAbility}{CHA}}{\newcommand{\SpellMod}{\CHAmod}}{}
-
-  \FPeval{\SpellSaveDC}{trunc(8 + \ProficiencyBonus + \SpellMod:0)}
-  \FPeval{\SpellAttackBonus}{trunc(\ProficiencyBonus + \SpellMod:0)}
-
-  \rput[cc](421.60812279,965.002775875){\LARGE \SpellAbility}
-  \rput[cc](555.88958610,965.002775875){\LARGE \SpellSaveDC}
   \rput[cc](694.28771598,965.002775875){\LARGE \numprint{\SpellAttackBonus}}
 }
 

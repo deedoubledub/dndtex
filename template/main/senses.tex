@@ -87,9 +87,6 @@
 
 %character data
 %passive perception
-\ifthenelse{\isundefined{\ProfPerception}}{\newcommand{\PerceptionMod}{0}}{\newcommand{\PerceptionMod}{\ProficiencyBonus}}
-\FPeval{\Perception}{trunc(\WISmod + \PerceptionMod:0)}
-\FPeval{\PassivePerception}{trunc(10 + \Perception:0)}
 \rput[cc]( 57.99946577,256.785460244){\Large {\PassivePerception}}
 }
 
@@ -182,9 +179,6 @@
 
 %character data
 %passive insight
-\ifthenelse{\isundefined{\ProfInsight}}{\newcommand{\InsightMod}{0}}{\newcommand{\InsightMod}{\ProficiencyBonus}}
-\FPeval{\Insight}{trunc(\WISmod + \InsightMod:0)}
-\FPeval{\PassiveInsight}{trunc(10 + \Insight:0)}
 \rput[cc]( 57.99946577,256.785460244){\Large {\PassiveInsight}}
 }
 
@@ -277,9 +271,6 @@
 
 %character data
 %passive investigation
-\ifthenelse{\isundefined{\ProfInvestigation}}{\newcommand{\InvestigationMod}{0}}{\newcommand{\InvestigationMod}{\ProficiencyBonus}}
-\FPeval{\Investigation}{trunc(\INTmod + \InvestigationMod:0)}
-\FPeval{\PassiveInvestigation}{trunc(10 + \Investigation:0)}
 \rput[cc]( 57.99946577,256.785460244){\Large {\PassiveInvestigation}}
 }
 

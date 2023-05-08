@@ -400,20 +400,6 @@
 }
 
 %character data
-%calculate saving throws
-\ifthenelse{\isundefined{\ProfSTRsave}}{\newcommand{\STRsaveMod}{0}}{\newcommand{\STRsaveMod}{\ProficiencyBonus}}
-\ifthenelse{\isundefined{\ProfDEXsave}}{\newcommand{\DEXsaveMod}{0}}{\newcommand{\DEXsaveMod}{\ProficiencyBonus}}
-\ifthenelse{\isundefined{\ProfCONsave}}{\newcommand{\CONsaveMod}{0}}{\newcommand{\CONsaveMod}{\ProficiencyBonus}}
-\ifthenelse{\isundefined{\ProfINTsave}}{\newcommand{\INTsaveMod}{0}}{\newcommand{\INTsaveMod}{\ProficiencyBonus}}
-\ifthenelse{\isundefined{\ProfWISsave}}{\newcommand{\WISsaveMod}{0}}{\newcommand{\WISsaveMod}{\ProficiencyBonus}}
-\ifthenelse{\isundefined{\ProfCHAsave}}{\newcommand{\CHAsaveMod}{0}}{\newcommand{\CHAsaveMod}{\ProficiencyBonus}}
-\FPeval{\STRsave}{trunc(\STRmod + \STRsaveMod:0)}
-\FPeval{\DEXsave}{trunc(\DEXmod + \DEXsaveMod:0)}
-\FPeval{\CONsave}{trunc(\CONmod + \CONsaveMod:0)}
-\FPeval{\INTsave}{trunc(\INTmod + \INTsaveMod:0)}
-\FPeval{\WISsave}{trunc(\WISmod + \WISsaveMod:0)}
-\FPeval{\CHAsave}{trunc(\CHAmod + \CHAsaveMod:0)}
-
 %saving throws
 \rput[cc](160.14932933,774.25558064){\footnotesize \numprint{\STRsave}}
 \rput[cc](160.14932933,756.25558109){\footnotesize \numprint{\DEXsave}}

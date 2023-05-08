@@ -1,0 +1,97 @@
+% ability modifiers
+\FPeval{\STRmod}{trunc((\STR - 10)/2:0)}
+\FPeval{\DEXmod}{trunc((\DEX - 10)/2:0)}
+\FPeval{\CONmod}{trunc((\CON - 10)/2:0)}
+\FPeval{\INTmod}{trunc((\INT - 10)/2:0)}
+\FPeval{\WISmod}{trunc((\WIS - 10)/2:0)}
+\FPeval{\CHAmod}{trunc((\CHA - 10)/2:0)}
+
+% proficiency bonus
+% {2 + (Total Level-1)/4}Rounded Down
+\FPeval{\ProficiencyBonus}{trunc(2 + ((\Level - 1) / 4):0)}
+
+% saving throws
+\ifthenelse{\isundefined{\ProfSTRsave}}{\newcommand{\STRsaveMod}{0}}{\newcommand{\STRsaveMod}{\ProficiencyBonus}}
+\ifthenelse{\isundefined{\ProfDEXsave}}{\newcommand{\DEXsaveMod}{0}}{\newcommand{\DEXsaveMod}{\ProficiencyBonus}}
+\ifthenelse{\isundefined{\ProfCONsave}}{\newcommand{\CONsaveMod}{0}}{\newcommand{\CONsaveMod}{\ProficiencyBonus}}
+\ifthenelse{\isundefined{\ProfINTsave}}{\newcommand{\INTsaveMod}{0}}{\newcommand{\INTsaveMod}{\ProficiencyBonus}}
+\ifthenelse{\isundefined{\ProfWISsave}}{\newcommand{\WISsaveMod}{0}}{\newcommand{\WISsaveMod}{\ProficiencyBonus}}
+\ifthenelse{\isundefined{\ProfCHAsave}}{\newcommand{\CHAsaveMod}{0}}{\newcommand{\CHAsaveMod}{\ProficiencyBonus}}
+\FPeval{\STRsave}{trunc(\STRmod + \STRsaveMod:0)}
+\FPeval{\DEXsave}{trunc(\DEXmod + \DEXsaveMod:0)}
+\FPeval{\CONsave}{trunc(\CONmod + \CONsaveMod:0)}
+\FPeval{\INTsave}{trunc(\INTmod + \INTsaveMod:0)}
+\FPeval{\WISsave}{trunc(\WISmod + \WISsaveMod:0)}
+\FPeval{\CHAsave}{trunc(\CHAmod + \CHAsaveMod:0)}
+
+% skills
+\ifthenelse{\isundefined{\ProfAcrobatics}}{\newcommand{\AcrobaticsMod}{0}}{\newcommand{\AcrobaticsMod}{\ProficiencyBonus}}
+\ifthenelse{\isundefined{\ProfAnimalHandling}}{\newcommand{\AnimalHandlingMod}{0}}{\newcommand{\AnimalHandlingMod}{\ProficiencyBonus}}
+\ifthenelse{\isundefined{\ProfArcana}}{\newcommand{\ArcanaMod}{0}}{\newcommand{\ArcanaMod}{\ProficiencyBonus}}
+\ifthenelse{\isundefined{\ProfAthletics}}{\newcommand{\AthleticsMod}{0}}{\newcommand{\AthleticsMod}{\ProficiencyBonus}}
+\ifthenelse{\isundefined{\ProfDeception}}{\newcommand{\DeceptionMod}{0}}{\newcommand{\DeceptionMod}{\ProficiencyBonus}}
+\ifthenelse{\isundefined{\ProfHistory}}{\newcommand{\HistoryMod}{0}}{\newcommand{\HistoryMod}{\ProficiencyBonus}}
+\ifthenelse{\isundefined{\ProfInsight}}{\newcommand{\InsightMod}{0}}{\newcommand{\InsightMod}{\ProficiencyBonus}}
+\ifthenelse{\isundefined{\ProfIntimidation}}{\newcommand{\IntimidationMod}{0}}{\newcommand{\IntimidationMod}{\ProficiencyBonus}}
+\ifthenelse{\isundefined{\ProfInvestigation}}{\newcommand{\InvestigationMod}{0}}{\newcommand{\InvestigationMod}{\ProficiencyBonus}}
+\ifthenelse{\isundefined{\ProfMedicine}}{\newcommand{\MedicineMod}{0}}{\newcommand{\MedicineMod}{\ProficiencyBonus}}
+\ifthenelse{\isundefined{\ProfNature}}{\newcommand{\NatureMod}{0}}{\newcommand{\NatureMod}{\ProficiencyBonus}}
+\ifthenelse{\isundefined{\ProfPerception}}{\newcommand{\PerceptionMod}{0}}{\newcommand{\PerceptionMod}{\ProficiencyBonus}}
+\ifthenelse{\isundefined{\ProfPerformance}}{\newcommand{\PerformanceMod}{0}}{\newcommand{\PerformanceMod}{\ProficiencyBonus}}
+\ifthenelse{\isundefined{\ProfPersuasion}}{\newcommand{\PersuasionMod}{0}}{\newcommand{\PersuasionMod}{\ProficiencyBonus}}
+\ifthenelse{\isundefined{\ProfReligion}}{\newcommand{\ReligionMod}{0}}{\newcommand{\ReligionMod}{\ProficiencyBonus}}
+\ifthenelse{\isundefined{\ProfSleightOfHand}}{\newcommand{\SleightOfHandMod}{0}}{\newcommand{\SleightOfHandMod}{\ProficiencyBonus}}
+\ifthenelse{\isundefined{\ProfStealth}}{\newcommand{\StealthMod}{0}}{\newcommand{\StealthMod}{\ProficiencyBonus}}
+\ifthenelse{\isundefined{\ProfSurvival}}{\newcommand{\SurvivalMod}{0}}{\newcommand{\SurvivalMod}{\ProficiencyBonus}}
+
+\FPeval{\Acrobatics}{trunc(\DEXmod + \AcrobaticsMod:0)}
+\FPeval{\AnimalHandling}{trunc(\WISmod + \AnimalHandlingMod:0)}
+\FPeval{\Arcana}{trunc(\INTmod + \ArcanaMod:0)}
+\FPeval{\Athletics}{trunc(\STRmod + \AthleticsMod:0)}
+\FPeval{\Deception}{trunc(\CHAmod + \DeceptionMod:0)}
+\FPeval{\History}{trunc(\INTmod + \HistoryMod:0)}
+\FPeval{\Insight}{trunc(\WISmod + \InsightMod:0)}
+\FPeval{\Intimidation}{trunc(\CHAmod + \IntimidationMod:0)}
+\FPeval{\Investigation}{trunc(\INTmod + \InvestigationMod:0)}
+\FPeval{\Medicine}{trunc(\WISmod + \MedicineMod:0)}
+\FPeval{\Nature}{trunc(\INTmod + \NatureMod:0)}
+\FPeval{\Perception}{trunc(\WISmod + \PerceptionMod:0)}
+\FPeval{\Performance}{trunc(\CHAmod + \PerformanceMod:0)}
+\FPeval{\Persuasion}{trunc(\CHAmod + \PersuasionMod:0)}
+\FPeval{\Religion}{trunc(\INTmod + \ReligionMod:0)}
+\FPeval{\SleightOfHand}{trunc(\DEXmod + \SleightOfHandMod:0)}
+\FPeval{\Stealth}{trunc(\DEXmod + \StealthMod:0)}
+\FPeval{\Survival}{trunc(\WISmod + \SurvivalMod:0)}
+
+% passive perception
+\FPeval{\Perception}{trunc(\WISmod + \PerceptionMod:0)}
+\FPeval{\PassivePerception}{trunc(10 + \Perception:0)}
+
+% passive insight
+\FPeval{\Insight}{trunc(\WISmod + \InsightMod:0)}
+\FPeval{\PassiveInsight}{trunc(10 + \Insight:0)}
+
+% passive investigation
+\FPeval{\Investigation}{trunc(\INTmod + \InvestigationMod:0)}
+\FPeval{\PassiveInvestigation}{trunc(10 + \Investigation:0)}
+
+% armor class
+\FPeval{\AC}{trunc(\BaseArmor + \Armor + \DEXmod:0)}
+
+% max hp
+\FPeval{\MaxHP}{trunc(\BaseHP + (\Level * \CONmod):0)}
+
+% spellcasting
+\ifthenelse{\isundefined{\SpellAbility}}{
+  \newcommand{\SpellAbility}{--}
+  \newcommand{\SpellSaveDC}{--}
+  \newcommand{\SpellAttackBonus}{--}
+}
+{
+  \ifthenelse{\equal{\SpellAbility}{INT}}{\newcommand{\SpellMod}{\INTmod}}{}
+  \ifthenelse{\equal{\SpellAbility}{WIS}}{\newcommand{\SpellMod}{\WISmod}}{}
+  \ifthenelse{\equal{\SpellAbility}{CHA}}{\newcommand{\SpellMod}{\CHAmod}}{}
+
+  \FPeval{\SpellSaveDC}{trunc(8 + \ProficiencyBonus + \SpellMod:0)}
+  \FPeval{\SpellAttackBonus}{trunc(\ProficiencyBonus + \SpellMod:0)}
+}

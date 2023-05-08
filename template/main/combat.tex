@@ -794,7 +794,6 @@
 
 %character data
 %armor class
-\FPeval{\AC}{trunc(\BaseArmor + \Armor + \DEXmod:0)}
 \rput[cc](330,844){\LARGE \AC}
 
 %initiative
@@ -804,7 +803,6 @@
 \rput[cc](483,844){\LARGE \Speed}
 
 %max hp
-\FPeval{\MaxHP}{trunc(\BaseHP + (\Level * \CONmod):0)}
 \rput[cc](342,755){\LARGE \MaxHP}
 
 %hit dice total
