@@ -7,7 +7,7 @@
 %header
 \newcommand{\CharacterName}{Gilbert Windham}
 \newcommand{\Class}{Wizard}
-\newcommand{\Level}{2}
+\newcommand{\Level}{3}
 \newcommand{\Background}{Archaeologist}
 \newcommand{\PlayerName}{deedoubledub}
 \newcommand{\Race}{Variant Human}
@@ -43,7 +43,7 @@
 \newcommand{\Speed}{30ft.}
 
 %hit points
-\FPeval{\BaseHP}{6+4} %add rolls at each level
+\FPeval{\BaseHP}{6+4+4} %add rolls at each level
 
 %hit dice
 \newcommand{\HitDice}{d6}
@@ -62,8 +62,6 @@
   \textbf{Special Actions:\\} Arcane Recovery \textbullet\ 1/Long Rest\\
   Recover spell slots of a combined level up to half your wizard level (rounded up).
   The slots must be 5th level or lower.\\
-
-  \textbf{Prepared Spells:} \FPeval{\PreparedSpell}{trunc(\Level+\INTmod:0)}\PreparedSpell
 }
 
 %attacks
@@ -106,6 +104,7 @@
   \dnditem{Map Case \& Map}{1}{-}{-}{Is this a crypt in Udarth?}\\
   \dnditem{Cartographer's Tools}{1}{6}{15}{}\\
   \dnditem{Ornate Compass}{1}{-}{25}{}\\
+  \dnditem{Scroll of Command}{1}{-}{-}{Give this to Trig}\\
   \\
   \dnditem{\textbf{Component Pouch}}{1}{2}{25}{spellcasting focus}\\
 }
@@ -113,7 +112,7 @@
 %money
 \newcommand{\CP}{0}
 \newcommand{\SP}{0}
-\newcommand{\GP}{86}
+\newcommand{\GP}{236}
 \newcommand{\EP}{0}
 \newcommand{\PP}{0}
 
@@ -141,24 +140,31 @@
 
 %features
 \newcommand{\Features}{
-  \textbf{Ritual Spells:\\} Comprehend Languages\\Detect Magic\\Find Familiar\\\\
+  \textbf{Prepared Spells:} \FPeval{\PreparedSpell}{trunc(\Level+\INTmod:0)}\PreparedSpell
+  \hspace{2em}
+  \textbf{Cantrips Known:} \ifthenelse{\Level > 9}{5}{\ifthenelse{\Level > 3}{4}{3}}\\
+
   \textbf{Spell Slots:\\}
-  \begin{tabular}{ c c c c c c }
-    \textbf{1st} & \textbf{2nd} & \textbf{3rd} & \textbf{4th} & \textbf{5th} & \textbf{6th} \\
-    3 & - & - & - & - & -
-  \end{tabular}\\\\
-  \begin{tabular}{ c c c }
-    \textbf{7th} & \textbf{8th} & \textbf{9th} \\
-    - & - & -
-  \end{tabular}\\\\
+  \setlength\tabcolsep{0.38em}
+  \begin{tabular}{ c c c c c c c c c }
+    \textbf{1st} & \textbf{2nd} & \textbf{3rd} & \textbf{4th} & \textbf{5th} & \textbf{6th} & \textbf{7th} & \textbf{8th} & \textbf{9th} \\
+    4 & 2 & - & - & - & - & - & - & -
+  \end{tabular}\\
+
+  \textbf{Ritual Spells:\\} Comprehend Languages, Detect Magic, Find Familiar, Identify\\
+
+  \textbf{Cantrip Formulas:} When you finish a long rest, you can replace one wizard cantrip with another from the wizard spell list.\\
+
   \textbf{Feats:\\} Telekinetic (Intelligence)
+  \vspace{-\topsep}
   \begin{itemize}
+    \setlength\itemsep{-0.5em}
     \item +1 INT
-    \item You learn the mage hand cantrip. You can cast it without verbal or somatic components, and you can make the spectral hand invisible. If you already know this spell, its range increases by 30 feet when you cast it. Its spellcasting ability is the ability increased by this feat.
-    \item As a bonus action, you can try to telekinetically shove one creature you can see within 30 feet of you. When you do so, the target must succeed on a Strength saving throw (DC 8 + your proficiency bonus + the ability modifier of the score increased by this feat) or be moved 5 feet toward you or away from you. A creature can willingly fail this save.
+    \item You learn mage hand; cast it without verbal or somatic components; can be invisible; range increases by 30 feet if you already know it
+    \item As a bonus action, you can try to telekinetically shove a creature
   \end{itemize}
   \textbf{Background Features:\\} Historical Knowledge (Archaeologist)\\
-  When you enter a ruin or dungeon, you can correctly ascertain its original purpose and determine its builders, whether those were dwarves, elves, humans, yuan-ti, or some other known race. In addition, you can determine the monetary value of art objects more than a century old.
+  When you enter a ruin or dungeon, you can correctly ascertain its original purpose and determine its builders. You can determine the monetary value of art objects more than a century old.
 }
 
 %generate character sheet
