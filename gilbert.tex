@@ -69,8 +69,10 @@
   \attack{Rapier}{5ft.}{}{\texttt{+}\FPeval{\RapierHit}{trunc(\ProficiencyBonus+\DEXmod:0)}\RapierHit}{1d8\texttt{+}\DEXmod}{piercing}{Finesse}\\
   \attack{Dagger}{5ft.}{20(60)}{\texttt{+}\FPeval{\DaggerHit}{trunc(\ProficiencyBonus+\DEXmod:0)}\DaggerHit}{1d4\texttt{+}\DEXmod}{piercing}{Finesse, Light, Thrown}\\
   \attack{Whip}{10ft.}{}{\texttt{+}\DEXmod}{1d4\texttt{+}\DEXmod}{slashing}{Finesse, Reach}\\\\
-  \attack{Acid Splash}{}{60}{\FPeval{\AcidSplashSave}{trunc(8+\ProficiencyBonus+\INTmod:0)}\AcidSplashSave\ DEX}{1d6}{acid}{V,S}\\
-  \attack{Ray of Frost}{}{60}{\texttt{+}\FPeval{\RayFrostHit}{trunc(\ProficiencyBonus+\INTmod:0)}\RayFrostHit}{1d8}{cold}{V,S}
+  %\attack{Acid Splash}{}{60}{\FPeval{\AcidSplashSave}{trunc(8+\ProficiencyBonus+\INTmod:0)}\AcidSplashSave\ DEX}{1d6}{acid}{V,S}\\
+  \attack{Fire Bolt}{}{120ft.}{\texttt{+}\FPeval{\FireBoltHit}{trunc(\ProficiencyBonus+\INTmod:0)}\FireBoltHit}{1d10}{fire}{V,S}
+  %\attack{Ray of Frost}{}{60}{\texttt{+}\FPeval{\RayFrostHit}{trunc(\ProficiencyBonus+\INTmod:0)}\RayFrostHit}{1d8}{cold}{V,S}
+  %\attack{Shocking Grasp}{}{Touch}{\texttt{+}\FPeval{\ShockingGraspHit}{trunc(\ProficiencyBonus+\INTmod:0)}\ShockingGraspHit}{1d8}{lightning}{V,S}
 }
 
 %spellcasting
@@ -104,15 +106,19 @@
   \dnditem{Map Case \& Map}{1}{-}{-}{Is this a crypt in Udarth?}\\
   \dnditem{Cartographer's Tools}{1}{6}{15}{}\\
   \dnditem{Ornate Compass}{1}{-}{25}{}\\
-  \dnditem{Scroll of Command}{1}{-}{-}{Give this to Trig}\\
+  \dnditem{Potion of Healing}{2}{.5}{50}{regain 2d4\texttt{+}2 hit points}\\
+  \dnditem{Dragon Claw}{1}{}{?}{}\\
+  \dnditem{Scroll of Catapult}{1}{-}{-}{1st Level Transmutation}\\
+  \dnditem{Rune-Marked Business Card}{1}{-}{-}{Udarth-related rune}\\
   \\
   \dnditem{\textbf{Component Pouch}}{1}{2}{25}{spellcasting focus}\\
+  \dnditem{Pearl}{1}{-}{100}{}\\
 }
 
 %money
 \newcommand{\CP}{0}
 \newcommand{\SP}{0}
-\newcommand{\GP}{236}
+\newcommand{\GP}{341}
 \newcommand{\EP}{0}
 \newcommand{\PP}{0}
 
