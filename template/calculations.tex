@@ -93,5 +93,5 @@
   \ifthenelse{\equal{\SpellAbility}{CHA}}{\newcommand{\SpellMod}{\CHAmod}}{}
 
   \FPeval{\SpellSaveDC}{trunc(8 + \ProficiencyBonus + \SpellMod:0)}
-  \FPeval{\SpellAttackBonus}{trunc(\ProficiencyBonus + \SpellMod:0)}
+  \FPeval{\SpellAttackBonus}{trunc(\ProficiencyBonus + \SpellMod +\SpellModBonus:0)}
 }

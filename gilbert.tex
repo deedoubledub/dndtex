@@ -7,7 +7,7 @@
 %header
 \newcommand{\CharacterName}{Gilbert Windham}
 \newcommand{\Class}{Wizard}
-\newcommand{\Level}{3}
+\newcommand{\Level}{4}
 \newcommand{\Background}{Archaeologist}
 \newcommand{\PlayerName}{deedoubledub}
 \newcommand{\Race}{Variant Human}
@@ -18,7 +18,7 @@
 \newcommand{\STR}{8}
 \newcommand{\DEX}{14}
 \newcommand{\CON}{13}
-\newcommand{\INT}{18}
+\newcommand{\INT}{20}
 \newcommand{\WIS}{12}
 \newcommand{\CHA}{10}
 
@@ -43,7 +43,7 @@
 \newcommand{\Speed}{30ft.}
 
 %hit points
-\FPeval{\BaseHP}{6+4+4} %add rolls at each level
+\FPeval{\BaseHP}{6+4+4+4} %add rolls at each level
 
 %hit dice
 \newcommand{\HitDice}{d6}
@@ -69,14 +69,15 @@
   \attack{Rapier}{5ft.}{}{\texttt{+}\FPeval{\RapierHit}{trunc(\ProficiencyBonus+\DEXmod:0)}\RapierHit}{1d8\texttt{+}\DEXmod}{piercing}{Finesse}\\
   \attack{Dagger}{5ft.}{20(60)}{\texttt{+}\FPeval{\DaggerHit}{trunc(\ProficiencyBonus+\DEXmod:0)}\DaggerHit}{1d4\texttt{+}\DEXmod}{piercing}{Finesse, Light, Thrown}\\
   \attack{Whip}{10ft.}{}{\texttt{+}\DEXmod}{1d4\texttt{+}\DEXmod}{slashing}{Finesse, Reach}\\\\
-  %\attack{Acid Splash}{}{60}{\FPeval{\AcidSplashSave}{trunc(8+\ProficiencyBonus+\INTmod:0)}\AcidSplashSave\ DEX}{1d6}{acid}{V,S}\\
-  \attack{Fire Bolt}{}{120ft.}{\texttt{+}\FPeval{\FireBoltHit}{trunc(\ProficiencyBonus+\INTmod:0)}\FireBoltHit}{1d10}{fire}{V,S}
-  %\attack{Ray of Frost}{}{60}{\texttt{+}\FPeval{\RayFrostHit}{trunc(\ProficiencyBonus+\INTmod:0)}\RayFrostHit}{1d8}{cold}{V,S}
-  %\attack{Shocking Grasp}{}{Touch}{\texttt{+}\FPeval{\ShockingGraspHit}{trunc(\ProficiencyBonus+\INTmod:0)}\ShockingGraspHit}{1d8}{lightning}{V,S}
+  \attack{Acid Splash}{}{60}{\FPeval{\AcidSplashSave}{trunc(8+\ProficiencyBonus+\INTmod:0)}\AcidSplashSave\ DEX}{1d6}{acid}{V,S}\\
+  \attack{Fire Bolt}{}{120ft.}{\texttt{+}\FPeval{\FireBoltHit}{trunc(\ProficiencyBonus+\INTmod+\SpellModBonus:0)}\FireBoltHit}{1d10}{fire}{V,S}\\
+  \attack{Ray of Frost}{}{60}{\texttt{+}\FPeval{\RayFrostHit}{trunc(\ProficiencyBonus+\INTmod+\SpellModBonus:0)}\RayFrostHit}{1d8}{cold}{V,S}\\
+  \attack{Shocking Grasp}{}{Touch}{\texttt{+}\FPeval{\ShockingGraspHit}{trunc(\ProficiencyBonus+\INTmod+\SpellModBonus:0)}\ShockingGraspHit}{1d8}{lightning}{V,S}
 }
 
 %spellcasting
 \newcommand{\SpellAbility}{INT}
+\newcommand{\SpellModBonus}{1} %locket
 
 %description header
 \newcommand{\Age}{32}
@@ -90,7 +91,7 @@
 \newcommand{\Equipment}{
   %name qty wt cost notes
   \dnditem{Rapier}{1}{2}{25}{\tiny{martial, finesse}}\\
-  \dnditem{Dagger}{2}{2}{4}{\tiny{simple, finesse, light, thrown, range (20/60)}}\\
+  \dnditem{Dagger}{2}{2}{4}{\tiny{smpl, fin., light, thrown, range (20/60)}}\\
   \dnditem{Whip}{1}{3}{2}{martial, finesse, reach}\\
   \dnditem{Spellbook}{1}{3}{50}{utility}\\
   \dnditem{Studded Leather}{1}{13}{45}{light armor, AC 12}\\
@@ -99,8 +100,7 @@
   \\
   \dnditem{\textbf{Backpack}}{1}{5}{2}{capacity: 1ft$^3$/30\tiny{lb.}}\\
   \dnditem{Ink Pen}{1}{-}{0.02}{communication, social, utility}\\
-  \dnditem{Ink \scriptsize{(1 oz. bottle)}}{1}{-}{10}{\tiny{communication, social, utility, consumable}}\\
-  \dnditem{Parchment}{310}{-}{31}{\tiny{communication, social, utility, consumable}}\\
+  \dnditem{Ink \scriptsize{(1 oz. bottle)}}{1}{-}{10}{\tiny{comm, social, utility, consumable}}\\
   \dnditem{Little Bag of Sand}{1}{-}{-}{utility}\\
   \dnditem{Small Knife}{1}{-}{-}{utility}\\
   \dnditem{Map Case \& Map}{1}{-}{-}{Is this a crypt in Udarth?}\\
@@ -113,12 +113,15 @@
   \\
   \dnditem{\textbf{Component Pouch}}{1}{2}{25}{spellcasting focus}\\
   \dnditem{Pearl}{1}{-}{100}{}\\
+  \\
+  \footnotesize{\textbf{Attuned}}\\
+  \dnditem{Locket}{1}{-}{1200}{\tiny{\texttt{+}1 spell atk, reroll 1 dmg die/lng rst}}\\
 }
 
 %money
-\newcommand{\CP}{0}
+\newcommand{\CP}{98}
 \newcommand{\SP}{0}
-\newcommand{\GP}{341}
+\newcommand{\GP}{262}
 \newcommand{\EP}{0}
 \newcommand{\PP}{0}
 
@@ -154,7 +157,7 @@
   \setlength\tabcolsep{0.38em}
   \begin{tabular}{ c c c c c c c c c }
     \textbf{1st} & \textbf{2nd} & \textbf{3rd} & \textbf{4th} & \textbf{5th} & \textbf{6th} & \textbf{7th} & \textbf{8th} & \textbf{9th} \\
-    4 & 2 & - & - & - & - & - & - & -
+    4 & 3 & - & - & - & - & - & - & -
   \end{tabular}\\
 
   \textbf{Ritual Spells:\\} Comprehend Languages, Detect Magic, Find Familiar, Identify\\
@@ -170,7 +173,14 @@
     \item As a bonus action, you can try to telekinetically shove a creature
   \end{itemize}
   \textbf{Background Features:\\} Historical Knowledge (Archaeologist)\\
-  When you enter a ruin or dungeon, you can correctly ascertain its original purpose and determine its builders. You can determine the monetary value of art objects more than a century old.
+  When you enter a ruin or dungeon, you can correctly ascertain its original purpose and determine its builders. You can determine the monetary value of art objects more than a century old.\\\\
+  \textbf{Neverwinter University Rank: 1}\\
+  \vspace{-2em}
+  \begin{itemize}
+    \setlength\itemsep{-0.5em}
+    \item Free Teleportation to Waterdeep, Baldur's Gate, Luskan, Radiant Citadel, Caer Callidyrr
+    \item Discount at component shop and gift shop
+  \end{itemize}
 }
 
 %generate character sheet

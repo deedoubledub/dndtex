@@ -1,0 +1,97 @@
+\documentclass[letterpaper]{article}
+
+\usepackage{spellcard}
+\usepackage{ifthen}
+\usepackage[fixed]{fontawesome5}
+
+% colors
+\definecolor{titlebg}{RGB}{30,30,30}
+\definecolor{bannerbg}{RGB}{255,000,50}
+\definecolor{textbg}{RGB}{200,200,200}
+
+% card layout template
+\newcommand{\card}{
+    \cardtitle{titlebg}
+    \cardbanner{bannerbg}
+    \cardtextarea{textbg}
+    \cardborder
+    %\carddebug
+}
+
+% familiar card layout template
+\newcommand{\familiar}{
+    \cardtitle{titlebg}
+    \cardbanner{bannerbg}
+    \cardborder
+    %\carddebug
+}
+
+% spell cards
+\begin{document}
+\begin{center}
+    \pagestyle{empty}
+    %% spell template
+    %\begin{tikzpicture}
+    %    \card
+    %    \spellName{name}
+    %    \spellIcon{school}
+    %    \spellSchoolLevel{banner text}
+    %    \spellComponents{V}{S}{M}
+    %    \spellMaterialComponents{optional material components}
+    %    \spellCastingTime{1 Action}
+    %    \spellRitual %optional
+    %    \spellRange{60 ft}
+    %    \spellArea{15 ft}{cube} %optional
+    %    \spellDuration{Instantaneous}
+    %    \spellConcentration %optional
+    %    \spellText{
+    %        spell text, may contain TeX formatting\\
+    %        \vrule width \textwidth height 0.5pt\\[3pt] %optional separator
+    %        additional text such as up-level casting information
+    %    }
+    %\end{tikzpicture}
+
+    % identify
+    \begin{tikzpicture}
+        \card
+        \spellName{Misty Step}
+        \spellIcon{Conjuration}
+        \spellSchoolLevel{2nd Level Conjuration}
+        \spellComponents{V}{}{}
+        \spellCastingTime{1 Bonus Action}
+        \spellRange{Self}
+        \spellDuration{Instantaneous}
+        \spellText{
+            Briefly surrounded by silvery mist, you teleport up to
+            \textbf{30 feet} to an unoccupied space that you can see.
+        }
+    \end{tikzpicture}
+    % shatter
+    \begin{tikzpicture}
+        \card
+        \spellName{Shatter}
+        \spellIcon{Evocation}
+        \spellSchoolLevel{2nd Level Evocation}
+        \spellComponents{V}{S}{M}
+        \spellMaterialComponents{a chip of mica}
+        \spellCastingTime{1 Action}
+        \spellRange{60 ft}
+        \spellArea{10 ft}{sphere}
+        \spellDuration{Instantaneous}
+        \spellText{
+            A sudden loud ringing noise, painfully intense, erupts from a point
+            of your choice within range. Each creature in a \textbf{10-foot-radius sphere}
+            centered on that point must make a \textbf{Constitution saving throw}.
+            A creature takes \textbf{3d8 thunder damage} on a failed save,
+            \textbf{or half} as much damage on a successful one. A creature made
+            of inorganic material such as stone, crystal, or metal has
+            \textbf{disadvantage on this saving throw}.\\
+            \vrule width \textwidth height 0.5pt\\[3pt]
+            When you cast this spell using a spell slot of 3rd level or higher,
+            the damage increases by \textbf{1d8} for each slot level above 2nd.
+        }
+    \end{tikzpicture}
+\end{center}
+\end{document}
+\end{center}
+\end{document}
