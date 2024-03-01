@@ -1,0 +1,118 @@
+body {
+  background-image: url('images/forge.png');
+  background-size: cover;
+  color: #fff;
+  margin: 0;
+}
+
+.bg {
+  position: absolute;
+  z-index: -1;
+  width: 1920px;
+  height: 1080px;
+  background-color: rgba(0, 0, 0, 0.6);
+}
+
+.nameplate {
+  position: absolute;
+  top: 869px;
+  height: 211px;
+  width: 1520px;
+}
+
+.emblem {
+  height: 100%;
+  margin-right: 20px;
+  float: left;
+}
+
+.name-container {
+  height: 100%;
+  float: left;
+}
+
+.name {
+  font-size: 70px;
+  margin-top: 40px;
+  margin-bottom: 10px;
+}
+
+.class {
+  font-size: 48px;
+  margin-top: 10px;
+  margin-bottom: 40px;
+}
+
+.stats {
+  width: 400px;
+  height: 1080px;
+  float: right;
+}
+
+.stats > img {
+  width: 100%;
+}
+
+.stats-row {
+  display: flex;
+  justify-content: center;
+}
+
+.stat {
+  width: 150px;
+  height: 150px;
+  margin-top: 15px;
+  margin-left: 20px;
+  margin-right: 20px;
+}
+
+.ability {
+  background-image: url('images/outline.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.ac {
+  background-image: url('images/shield.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.ac > .stat-text {
+  margin-top: 30px;
+}
+
+.hp {
+  background-image: url('images/heart.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.hp > .stat-text {
+  margin-top: 30px;
+}
+
+.stat-text {
+  font-size: 38px;
+  margin: 10px;
+}
+
+.stat-title {
+  font-weight: bold;
+  margin-top: 10px;
+  margin-bottom: 0px;
+  text-align: center;
+}
+
+.stat-mod {
+  margin: 0px;
+  text-align: center;
+}
+
+.stat-value {
+  margin-top: 4px;
+  text-align: center;
+}
