@@ -1,4 +1,8 @@
 {
+  "level": 1,
+  "class": "Cleric",
+  "subclass": "Forge Domain",
+  "name": "Oskar Hammerhaft",
   "str": 13,
   "dex": 9,
   "con": 17,

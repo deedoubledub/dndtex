@@ -1,7 +1,13 @@
 async function getStats() {
-  const response = await fetch("http://localhost:8080/stats.json");
+  // fetch json
+  const response = await fetch("http://localhost:8080/stats.json", { cache: "no-store" });
   const stats = await response.json();
 
+  // set nameplate
+  document.getElementById("name").innerHTML = stats.name;
+  document.getElementById("class").innerHTML = "Level " + stats.level + " " + stats.class + " - " + stats.subclass;
+
+  // set ability scores
   document.getElementById("str").innerHTML = stats.str;
   document.getElementById("dex").innerHTML = stats.dex;
   document.getElementById("con").innerHTML = stats.con;
@@ -10,6 +16,27 @@ async function getStats() {
   document.getElementById("cha").innerHTML = stats.cha;
   document.getElementById("ac").innerHTML = stats.ac;
   document.getElementById("hp").innerHTML = stats.hp;
+
+  // set ability modifiers
+  document.getElementById("strmod").innerHTML = modifier(stats.str);
+  document.getElementById("dexmod").innerHTML = modifier(stats.dex);
+  document.getElementById("conmod").innerHTML = modifier(stats.con);
+  document.getElementById("intmod").innerHTML = modifier(stats.int);
+  document.getElementById("wismod").innerHTML = modifier(stats.wis);
+  document.getElementById("chamod").innerHTML = modifier(stats.cha);
 }
 
-window.setInterval(getStats, 5000);
+// calculate ability modifier
+function modifier(score) {
+  mod = Math.floor((score - 10) / 2);
+
+  // return mod with sign
+  if (mod >= 0) {
+    return "+" + mod;
+  } else {
+    return mod;
+  }
+}
+
+// update stats every second
+window.setInterval(getStats, 1000);
