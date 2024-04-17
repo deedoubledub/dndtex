@@ -1,5 +1,5 @@
 {
-  "level": 1,
+  "level": 3,
   "class": "Cleric",
   "subclass": "Forge Domain",
   "name": "Oskar Hammerhaft",
@@ -9,6 +9,6 @@
   "int": 12,
   "wis": 17,
   "cha": 11,
-  "ac": 18,
+  "ac": 19,
   "hp": 12
 }
