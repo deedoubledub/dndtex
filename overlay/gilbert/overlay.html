@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OBS Overlay</title>
+    <link rel="stylesheet" href="overlay.css">
+  </head>
+  <body>
+    <div class="bg"></div>
+
+    <div class="nameplate">
+      <img class="emblem" src="images/emblem.png">
+      <div class="name-container">
+        <p id="name" class="name"></p>
+        <p id="class" class="class"></p>
+      </div>
+    </div>
+
+    <div class="stats">
+      <img src="images/portrait.png">
+      <div class="stats-row">
+        <div class="stat ability">
+          <div class="stat-text">
+            <p class="stat-title">STR</p>
+            <p id="strmod" class="stat-mod"></p>
+            <p id="str" class="stat-value"></p>
+          </div>
+        </div>
+        <div class="stat ability">
+          <div class="stat-text">
+            <p class="stat-title">DEX</p>
+            <p id="dexmod" class="stat-mod"></p>
+            <p id="dex" class="stat-value"></p>
+          </div>
+        </div>
+      </div>
+      <div class="stats-row">
+        <div class="stat ability">
+          <div class="stat-text">
+            <p class="stat-title">CON</p>
+            <p id="conmod" class="stat-mod"></p>
+            <p id="con" class="stat-value"></p>
+          </div>
+        </div>
+        <div class="stat ability">
+          <div class="stat-text">
+            <p class="stat-title">INT</p>
+            <p id="intmod" class="stat-mod"></p>
+            <p id="int" class="stat-value"></p>
+          </div>
+        </div>
+      </div>
+      <div class="stats-row">
+        <div class="stat ability">
+          <div class="stat-text">
+            <p class="stat-title">WIS</p>
+            <p id="wismod" class="stat-mod"></p>
+            <p id="wis" class="stat-value"></p>
+          </div>
+        </div>
+        <div class="stat ability">
+          <div class="stat-text">
+            <p class="stat-title">CHA</p>
+            <p id="chamod" class="stat-mod"></p>
+            <p id="cha" class="stat-value"></p>
+          </div>
+        </div>
+      </div>
+      <div class="stats-row">
+        <div class="stat ac">
+          <div class="stat-text">
+            <p class="stat-title">AC</p>
+            <p id="ac" class="stat-value"></p>
+          </div>
+        </div>
+        <div class="stat hp">
+          <div class="stat-text">
+            <p class="stat-title">HP</p>
+            <p id="hp" class="stat-value"></p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="overlay.js"></script>
+  </body>
+</html>
