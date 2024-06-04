@@ -1,6 +1,6 @@
 async function getStats() {
   // fetch json
-  const response = await fetch("http://localhost:8080/gilbert/stats.json", { cache: "no-store" });
+  const response = await fetch("http://frame.deedoubledub.com:8080/gilbert/stats.json", { cache: "no-store" });
   const stats = await response.json();
 
   // set nameplate
