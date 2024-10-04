@@ -1,14 +1,14 @@
 {
-  "level": 3,
+  "level": 4,
   "class": "Cleric",
   "subclass": "Forge Domain",
   "name": "Oskar Hammerhaft",
   "str": 13,
   "dex": 9,
-  "con": 17,
+  "con": 18,
   "int": 12,
-  "wis": 17,
+  "wis": 18,
   "cha": 11,
   "ac": 19,
-  "hp": 12
+  "hp": 25
 }
