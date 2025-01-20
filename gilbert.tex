@@ -7,7 +7,7 @@
 %header
 \newcommand{\CharacterName}{Gilbert Windham}
 \newcommand{\Class}{Wizard}
-\newcommand{\Level}{4}
+\newcommand{\Level}{5}
 \newcommand{\Background}{Archaeologist}
 \newcommand{\PlayerName}{deedoubledub}
 \newcommand{\Race}{Variant Human}
@@ -92,12 +92,12 @@
   %name qty wt cost notes
   \dnditem{Rapier}{1}{2}{25}{\tiny{martial, finesse}}\\
   \dnditem{Dagger}{2}{2}{4}{\tiny{smpl, fin., light, thrown, range (20/60)}}\\
+  \dnditem{Dagger}{1}{1}{5}{\tiny{from Udarth armory, DM said 5GP}}\\
   \dnditem{Whip}{1}{3}{2}{martial, finesse, reach}\\
   \dnditem{Spellbook}{1}{3}{50}{utility}\\
   \dnditem{Studded Leather}{1}{13}{45}{light armor, AC 12}\\
   \dnditem{Traveler's Clothes}{1}{4}{2}{social, outerwear}\\
   \dnditem{The Burnt Book}{1}{-}{-}{journal, spellbook}\\
-  \\
   \dnditem{\textbf{Backpack}}{1}{5}{2}{capacity: 1ft$^3$/30\tiny{lb.}}\\
   \dnditem{Ink Pen}{1}{-}{0.02}{communication, social, utility}\\
   \dnditem{Ink \scriptsize{(1 oz. bottle)}}{1}{-}{10}{\tiny{comm, social, utility, consumable}}\\
@@ -115,7 +115,6 @@
   \dnditem{\textbf{Component Pouch}}{1}{2}{25}{spellcasting focus}\\
   \dnditem{Pearl}{1}{-}{100}{}\\
   \dnditem{Glow Nut}{1}{-}{-}{shake for 1min, 10ft glow}\\
-  \\
   \footnotesize{\textbf{Attuned}}\\
   \dnditem{Locket}{1}{-}{1200}{\tiny{\texttt{+}1 spell atk, reroll 1 dmg die/lng rst}}\\
 }
@@ -152,14 +151,14 @@
 %features
 \newcommand{\Features}{
   \textbf{Prepared Spells:} \FPeval{\PreparedSpell}{trunc(\Level+\INTmod:0)}\PreparedSpell
-  \hspace{2em}
+  \hspace{1.5em}
   \textbf{Cantrips Known:} \ifthenelse{\Level > 9}{5}{\ifthenelse{\Level > 3}{4}{3}}\\
 
   \textbf{Spell Slots:\\}
   \setlength\tabcolsep{0.38em}
   \begin{tabular}{ c c c c c c c c c }
     \textbf{1st} & \textbf{2nd} & \textbf{3rd} & \textbf{4th} & \textbf{5th} & \textbf{6th} & \textbf{7th} & \textbf{8th} & \textbf{9th} \\
-    4 & 3 & - & - & - & - & - & - & -
+    4 & 3 & 2 & - & - & - & - & - & -
   \end{tabular}\\
 
   \textbf{Ritual Spells:\\} Comprehend Languages, Detect Magic, Find Familiar, Identify\\

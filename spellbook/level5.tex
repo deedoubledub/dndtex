@@ -1,0 +1,106 @@
+\documentclass[letterpaper]{article}
+
+\usepackage{spellcard}
+\usepackage{ifthen}
+\usepackage[fixed]{fontawesome5}
+
+% colors
+\definecolor{titlebg}{RGB}{30,30,30}
+\definecolor{bannerbg}{RGB}{255,000,50}
+\definecolor{textbg}{RGB}{200,200,200}
+
+% card layout template
+\newcommand{\card}{
+    \cardtitle{titlebg}
+    \cardbanner{bannerbg}
+    \cardtextarea{textbg}
+    \cardborder
+    %\carddebug
+}
+
+% familiar card layout template
+\newcommand{\familiar}{
+    \cardtitle{titlebg}
+    \cardbanner{bannerbg}
+    \cardborder
+    %\carddebug
+}
+
+% spell cards
+\begin{document}
+\begin{center}
+    \pagestyle{empty}
+    %% spell template
+    %\begin{tikzpicture}
+    %    \card
+    %    \spellName{name}
+    %    \spellIcon{school}
+    %    \spellSchoolLevel{banner text}
+    %    \spellComponents{V}{S}{M}
+    %    \spellMaterialComponents{optional material components}
+    %    \spellCastingTime{1 Action}
+    %    \spellRitual %optional
+    %    \spellRange{60 ft}
+    %    \spellArea{15 ft}{cube} %optional
+    %    \spellDuration{Instantaneous}
+    %    \spellConcentration %optional
+    %    \spellText{
+    %        spell text, may contain TeX formatting\\
+    %        \vrule width \textwidth height 0.5pt\\[3pt] %optional separator
+    %        additional text such as up-level casting information
+    %    }
+    %\end{tikzpicture}
+
+    % Fireball
+    \begin{tikzpicture}
+        \card
+        \spellName{Fireball}
+        \spellIcon{Evocation}
+        \spellSchoolLevel{3rd Level Evocation}
+        \spellComponents{V}{S}{M}
+        \spellMaterialComponents{a tiny ball of bat guano and sulfur}
+        \spellCastingTime{1 Action}
+        \spellRange{150 ft}
+        \spellArea{20 ft}{sphere}
+        \spellDuration{Instantaneous}
+        \spellText{
+            A bright streak flashes from your finger to a point you choose and
+            then blossoms with a low roar into an explosion of flame. Each
+            creature in a 20-foot-radius sphere centered on that point must make
+            a Dex saving throw, taking \textbf{8d6 fire damage} on a failed
+            save, or half on a successful one.\\
+            The fire spreads around corners and ignites flammable objects in the
+            area that aren't being worn or carried.\\
+            \vrule width \textwidth height 0.5pt\\[3pt]
+            \textbf{At Higher Levels} When you cast this spell using a spell
+            slot of 4th level or higher, the damage increases by 1d6 for each
+            slot level above 3rd.
+        }
+    \end{tikzpicture}
+    % Fly
+    \begin{tikzpicture}
+        \card
+        \spellName{Fly}
+        \spellIcon{Transmutation}
+        \spellSchoolLevel{3rd Level Transmutation}
+        \spellComponents{V}{S}{M}
+        \spellMaterialComponents{a wing feather from any bird}
+        \spellCastingTime{1 Action}
+        \spellRange{Touch}
+        \spellDuration{10 Minutes}
+        \spellConcentration
+        \spellText{
+            You touch a willing creature. The target gains a
+            \textbf{flying speed of 60 feet} for the duration. When the spell
+            ends, the target falls if it is still aloft, unless it can stop the
+            fall.\\
+            \vrule width \textwidth height 0.5pt\\[3pt]
+            \textbf{At Higher Levels} When you cast this spell using a spell
+            slot of 4th level or higher, you can target one additional creature
+            for each slot level above 3rd.
+        }
+    \end{tikzpicture}
+\end{center}
+\end{document}
+\end{center}
+\end{document}
