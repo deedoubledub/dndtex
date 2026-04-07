@@ -241,6 +241,74 @@
 }
 }
 
+% whip time
+{
+{
+%whip time inner left
+\pscustom[linewidth=0.80000001,linecolor=header-color-accent]
+{
+\newpath
+\moveto(835.35918382,979.27384218)
+\lineto(835.35918382,950.30850958)
+\moveto(835.35918382,954.38850947)
+\lineto(844.31385026,943.30317642)
+\moveto(844.31251693,986.701842)
+\lineto(835.35785048,975.61784228)
+}
+}
+{
+%whip time inner dot
+\pscustom[linestyle=none,fillstyle=solid,fillcolor=header-color-accent]
+{
+\newpath
+\moveto(834.09225051,965.00424254)
+\curveto(834.09225051,964.30424256)(834.6602505,963.73624257)(835.35891715,963.73624257)
+\curveto(836.05891713,963.73624257)(836.62558378,964.30424256)(836.62558378,965.00424254)
+\curveto(836.62558378,965.70157586)(836.05891713,966.26957584)(835.35891715,966.26957584)
+\curveto(834.6602505,966.26957584)(834.09225051,965.70157586)(834.09225051,965.00424254)
+}
+}
+{
+%whip time inner dot
+\pscustom[linestyle=none,fillstyle=solid,fillcolor=header-color-accent]
+{
+\newpath
+\moveto(930.4822481,965.00424254)
+\curveto(930.4822481,964.30424256)(929.91424812,963.73624257)(929.21558147,963.73624257)
+\curveto(928.51558149,963.73624257)(927.94891483,964.30424256)(927.94891483,965.00424254)
+\curveto(927.94891483,965.70157586)(928.51558149,966.26957584)(929.21558147,966.26957584)
+\curveto(929.91424812,966.26957584)(930.4822481,965.70157586)(930.4822481,965.00424254)
+}
+}
+{
+%whip time inner right
+\pscustom[linewidth=0.80000001,linecolor=header-color-accent]
+{
+\newpath
+\moveto(929.2153148,979.27384218)
+\lineto(929.2153148,950.30850958)
+\moveto(929.2153148,954.38850947)
+\lineto(920.26064836,943.30317642)
+\moveto(920.26198169,986.701842)
+\lineto(929.21664814,975.61784228)
+}
+}
+%whip time outer border
+\pscustom[linewidth=1.83333329,linecolor=header-color]
+{
+\newpath
+\moveto(923.31171495,986.70210867)
+\lineto(841.26238367,986.70210867)
+\lineto(832.81305055,976.06610893)
+\lineto(832.81305055,953.93810948)
+\lineto(841.259717,943.30344308)
+\lineto(923.31438162,943.30344308)
+\lineto(931.76238141,953.93810948)
+\lineto(931.76238141,976.06610893)
+\closepath
+}
+}
+
 %labels
 \rput[cc](421.84513941,935.54423754){\scriptsize \textsf{SPELLCASTING}}
 \rput[cc](421.84513941,927.01546172){\scriptsize \textsf{ABILITY}}
@@ -249,6 +317,9 @@
 
 \rput[cc](695.0886031,935.54423754){\scriptsize \textsf{SPELL ATTACK}}
 \rput[cc](695.0886031,927.01546172){\scriptsize \textsf{BONUS}}
+
+\rput[cc](880.0886031,935.54423754){\scriptsize \textsf{WHIP TIME}}
+\rput[cc](880.0886031,927.01546172){\scriptsize \textsf{HOURS}}
 
 %character data
 \rput[cc](421.60812279,965.002775875){\LARGE \SpellAbility}
@@ -260,5 +331,7 @@
 {
   \rput[cc](694.28771598,965.002775875){\LARGE \numprint{\SpellAttackBonus}}
 }
+
+\rput[cc](881.88958610,965.002775875){\LARGE \WhipHours}
 
 }
