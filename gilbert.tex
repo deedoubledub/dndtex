@@ -7,7 +7,7 @@
 %header
 \newcommand{\CharacterName}{Gilbert Windham}
 \newcommand{\Class}{Wizard}
-\newcommand{\Level}{5}
+\newcommand{\Level}{6}
 \newcommand{\Background}{Archaeologist}
 \newcommand{\PlayerName}{deedoubledub}
 \newcommand{\Race}{Variant Human}
@@ -43,13 +43,17 @@
 \newcommand{\Speed}{30ft.}
 
 %hit points
-\FPeval{\BaseHP}{6+4+4+4+4} %add rolls at each level
+\FPeval{\BaseHP}{6+4+4+4+4+4} %add rolls at each level
 
 %hit dice
 \newcommand{\HitDice}{d6}
 
 %actions
+\newcommand{\HalfWizardLevel}{\floor{\Level/2}}
 \newcommand{\Actions}{
+  Extra Attack - You can attack twice whenever you take the attack action on
+  your turn. Moreover, you can cast a cantrip in place of one of those attacks.\\
+
   \textbf{Bonus Actions:\\} Telekinetic - Shove\\
   You can telekinetically shove a creature you can see within \textbf{30 ft.}
   The target must succeed on a \textbf{STR save} or be \textbf{moved 5 ft.
@@ -59,14 +63,14 @@
   \textbf{\texttt{+}\INTmod\ AC}, \textbf{\texttt{+}10 ft.} walking speed, \textbf{advantage on
   Acrobatics checks}, \textbf{\texttt{+}\INTmod} to \textbf{CON saves to maintain concentration}\\
 
-  \textbf{Special Actions:\\} Arcane Recovery \textbullet\ 1/Long Rest\\
+  \textbf{Special Actions:\\} Arcane Recovery \textbullet\ 1/Long Rest \textbullet\ \HalfWizardLevel\ levels\\
   Recover spell slots of a combined level up to half your wizard level (rounded up).
   The slots must be 5th level or lower.\\
 }
 
 %attacks
 \newcommand{\Attacks}{
-  \attack{Rapier}{5ft.}{}{\texttt{+}\FPeval{\RapierHit}{trunc(\ProficiencyBonus+\DEXmod:0)}\RapierHit}{1d8\texttt{+}\DEXmod}{piercing}{Finesse}\\
+  \attack{Rapier +1}{5ft.}{}{\texttt{+}\FPeval{\RapierHit}{trunc(\ProficiencyBonus+\DEXmod+1:0)}\RapierHit}{1d8\texttt{+}\number\numexpr\DEXmod+1\relax}{piercing}{Finesse}\\
   \attack{Dagger}{5ft.}{20(60)}{\texttt{+}\FPeval{\DaggerHit}{trunc(\ProficiencyBonus+\DEXmod:0)}\DaggerHit}{1d4\texttt{+}\DEXmod}{piercing}{Finesse, Light, Thrown}\\
   \attack{Whip}{10ft.}{}{\texttt{+}\DEXmod}{1d4\texttt{+}\DEXmod}{slashing}{Finesse, Reach}\\\\
   \attack{Acid Splash}{}{60}{\FPeval{\AcidSplashSave}{trunc(8+\ProficiencyBonus+\INTmod:0)}\AcidSplashSave\ DEX}{1d6}{acid}{V,S}\\
@@ -90,6 +94,7 @@
 %equipment
 \newcommand{\Equipment}{
   %name qty wt cost notes
+  \dnditem{Rapier +1}{1}{2}{-}{\tiny{martial, finesse}}\\
   \dnditem{Rapier}{1}{2}{25}{\tiny{martial, finesse}}\\
   \dnditem{Dagger}{2}{2}{4}{\tiny{smpl, fin., light, thrown, range (20/60)}}\\
   \dnditem{Dagger}{1}{1}{5}{\tiny{from Udarth armory, DM said 5GP}}\\
@@ -105,7 +110,6 @@
   \dnditem{Small Knife}{1}{-}{-}{utility}\\
   \dnditem{Cartographer's Tools}{1}{6}{15}{}\\
   \dnditem{Ornate Compass}{1}{-}{25}{}\\
-  \dnditem{Potion of Greater Healing}{1}{.5}{-}{regain 4d4\texttt{+}4 hit points}\\
   \dnditem{Potion of Healing}{2}{.5}{50}{regain 2d4\texttt{+}2 hit points}\\
   \dnditem{Tusk Love}{1}{-}{-}{book}\\
   \dnditem{Driftglobe}{1}{1}{500}{Item Card}\\
@@ -157,7 +161,7 @@
   \setlength\tabcolsep{0.38em}
   \begin{tabular}{ c c c c c c c c c }
     \textbf{1st} & \textbf{2nd} & \textbf{3rd} & \textbf{4th} & \textbf{5th} & \textbf{6th} & \textbf{7th} & \textbf{8th} & \textbf{9th} \\
-    4 & 3 & 2 & - & - & - & - & - & -
+    4 & 3 & 3 & - & - & - & - & - & -
   \end{tabular}\\
 
   \textbf{Ritual Spells:\\} Comprehend Languages, Detect Magic, Find Familiar, Identify\\
