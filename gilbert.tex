@@ -71,12 +71,12 @@
 %attacks
 \newcommand{\Attacks}{
   \attack{Rapier +1}{5ft.}{}{\texttt{+}\FPeval{\RapierHit}{trunc(\ProficiencyBonus+\DEXmod+1:0)}\RapierHit}{1d8\texttt{+}\number\numexpr\DEXmod+1\relax}{piercing}{Finesse}\\
-  \attack{Dagger}{5ft.}{20(60)}{\texttt{+}\FPeval{\DaggerHit}{trunc(\ProficiencyBonus+\DEXmod:0)}\DaggerHit}{1d4\texttt{+}\DEXmod}{piercing}{Finesse, Light, Thrown}\\
-  \attack{Whip}{10ft.}{}{\texttt{+}\DEXmod}{1d4\texttt{+}\DEXmod}{slashing}{Finesse, Reach}\\\\
-  \attack{Acid Splash}{}{60}{\FPeval{\AcidSplashSave}{trunc(8+\ProficiencyBonus+\INTmod:0)}\AcidSplashSave\ DEX}{1d6}{acid}{V,S}\\
-  \attack{Fire Bolt}{}{120ft.}{\texttt{+}\FPeval{\FireBoltHit}{trunc(\ProficiencyBonus+\INTmod+\SpellModBonus:0)}\FireBoltHit}{1d10}{fire}{V,S}\\
-  \attack{Ray of Frost}{}{60}{\texttt{+}\FPeval{\RayFrostHit}{trunc(\ProficiencyBonus+\INTmod+\SpellModBonus:0)}\RayFrostHit}{1d8}{cold}{V,S}\\
-  \attack{Shocking Grasp}{}{Touch}{\texttt{+}\FPeval{\ShockingGraspHit}{trunc(\ProficiencyBonus+\INTmod+\SpellModBonus:0)}\ShockingGraspHit}{1d8}{lightning}{V,S}
+  \attack{Dagger}{5ft.}{20(60)}{\texttt{+}\FPeval{\DaggerHit}{trunc(\ProficiencyBonus+\DEXmod:0)}\DaggerHit}{1d4\texttt{+}\DEXmod}{piercing}{Fin, Lgt, Throw}\\
+  \attack{Whip}{10ft.}{}{\texttt{+}\DEXmod}{1d4\texttt{+}\DEXmod}{slashing}{Finesse, Reach}\\
+  \\
+  \attack{Booming Blade}{}{5ft.}{}{atk\texttt{+}1d8}{thunder}{V,M \texttt{+}2d8 on move}\\
+  \attack{Fire Bolt}{}{120ft.}{\texttt{+}\FPeval{\FireBoltHit}{trunc(\ProficiencyBonus+\INTmod+\SpellModBonus:0)}\FireBoltHit}{2d10}{fire}{V,S}\\
+  \attack{Shocking Grasp}{}{Touch}{\texttt{+}\FPeval{\ShockingGraspHit}{trunc(\ProficiencyBonus+\INTmod+\SpellModBonus:0)}\ShockingGraspHit}{2d8}{lightning}{V,S}
 }
 
 %spellcasting
@@ -115,6 +115,7 @@
   \dnditem{Driftglobe}{1}{1}{500}{Item Card}\\
   \dnditem{Blue Star Sapphire}{1}{-}{1000}{piece of Azuredge battleaxe}\\
   \dnditem{Sarifal Challenge Coin}{1}{-}{-}{grants entry to Sarifal}\\
+  \dnditem{Spell Scrolls}{2}{-}{-}{\tiny{Bestow Curse (3rd), Knock (2nd)}}\\
   \dnditem{\textbf{Component Pouch}}{1}{2}{25}{spellcasting focus}\\
   \dnditem{Pearl}{1}{-}{100}{}\\
   \footnotesize{\textbf{Attuned}}\\
@@ -125,7 +126,7 @@
 %money
 \newcommand{\CP}{103}
 \newcommand{\SP}{14}
-\newcommand{\GP}{1839}
+\newcommand{\GP}{1849}
 \newcommand{\EP}{0}
 \newcommand{\PP}{0}
 
@@ -164,9 +165,9 @@
     4 & 3 & 3 & - & - & - & - & - & -
   \end{tabular}\\
 
-  \textbf{Ritual Spells:\\} Comprehend Languages, Detect Magic, Find Familiar, Identify\\
+  \textbf{Copying Spells:} 2 hours and 50gp per spell level. 1 hour and 10gp to copy your own spells.\\
 
-  \textbf{Cantrip Formulas:} When you finish a long rest, you can replace one wizard cantrip with another from the wizard spell list.\\
+  \textbf{Cantrip Formulas:} Replace one wizard cantrip with another after a long rest.\\
 
   \textbf{Feats:\\} Telekinetic (Intelligence)
   \vspace{-\topsep}
